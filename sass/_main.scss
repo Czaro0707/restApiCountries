@@ -1,0 +1,743 @@
+:root {
+    --background-color: hsl(0, 0%, 98%);
+    --background-elements: hsl(0, 0%, 100%);
+    --text-color: hsl(200, 15%, 8%);
+    --input-color: hsl(0, 0%, 52%);
+    --box-shadow: 0 0 5px gray;
+
+}
+
+.wrapper {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5%;
+    height: 15vh;
+    width: 100%;
+    box-shadow: var(--box-shadow);
+    background-color: var(--background-elements);
+
+
+    @include breakpointPortrait(sm) {
+        height: 10vh;
+    }
+
+    &__title {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-basis: 65%;
+        height: 100%;
+        font-size: 16px;
+        font-weight: 800;
+
+
+        @include breakpointLandscape(xs) {
+            font-size: 18px;
+        }
+
+        @include breakpointLandscape(md) {
+            font-size: 28px;
+        }
+
+
+        @include breakpointLandscape(xl) {
+            font-size: 32px;
+        }
+
+        @include breakpointPortrait(md) {
+            font-size: 18px;
+        }
+
+        @include breakpointPortrait(xl) {
+            font-size: 24px;
+        }
+    }
+
+    &__toggle {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        height: 40%;
+        cursor: pointer;
+
+        &__moon {
+            margin-right: 10px;
+            font-size: 14px;
+
+            @include breakpointLandscape(xs) {
+                font-size: 18px;
+            }
+
+            @include breakpointLandscape(md) {
+                font-size: 22px;
+            }
+
+            @include breakpointLandscape(xl) {
+                font-size: 24px;
+            }
+
+            @include breakpointPortrait(md) {
+                font-size: 22px;
+            }
+
+            @include breakpointPortrait(xl) {
+                font-size: 28px;
+            }
+        }
+
+        &__information {
+            font-size: 14px;
+            font-weight: 600;
+
+            @include breakpointLandscape(xs) {
+                font-size: 18px;
+            }
+
+            @include breakpointLandscape(md) {
+                font-size: 22px;
+            }
+
+            @include breakpointLandscape(xl) {
+                font-size: 24px;
+            }
+
+            @include breakpointPortrait(sm) {
+                font-size: 16px;
+            }
+
+            @include breakpointPortrait(md) {
+                font-size: 18px;
+            }
+
+            @include breakpointPortrait(xl) {
+                font-size: 28px;
+            }
+        }
+    }
+}
+
+.filter {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 25vh;
+    max-height: 150px;
+    width: 90%;
+    margin: 0 auto 5%;
+    padding: 2.5vh 0;
+
+    @include breakpointLandscape(xs) {
+        flex-direction: row;
+        margin: 0 auto 4%;
+    }
+
+    @include breakpointLandscape(xl) {
+        flex-direction: row;
+        margin: 0 auto
+    }
+
+    @include breakpointPortrait(xs) {
+        align-items: flex-start;
+    }
+
+    @include breakpointPortrait(lg) {
+        max-height: 220px;
+    }
+
+    &__country {
+        display: flex;
+        width: 100%;
+        flex-basis: 40%;
+        max-height: 70px;
+        background-color: var(--background-elements);
+        color: var(--input-color);
+        box-shadow: 0 0 1px gray;
+        border-radius: 5px;
+        padding: 10px 20px;
+
+        @include breakpointLandscape(xs) {
+            height: 80%;
+        }
+
+        @include breakpointLandscape(xl) {
+            height: 80px;
+        }
+
+        @include breakpointPortrait(lg) {
+            flex-basis: 60%;
+            padding: 20px 40px;
+        }
+
+        &__icon {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            flex-basis: 20%;
+            max-width: 30px;
+            font-size: 14px;
+
+            @include breakpointLandscape(xl) {
+                font-size: 25px;
+            }
+
+            @include breakpointPortrait(lg) {
+                font-size: 22px;
+            }
+        }
+
+        &__input {
+            flex-basis: 80%;
+            font-size: 18px;
+            padding: 0 0 0 10px;
+            border: none;
+            color: var(--input-color);
+            background-color: var(--background-elements);
+            outline: none;
+
+            @include breakpointLandscape(xs) {
+                font-size: 18px;
+            }
+
+            @include breakpointLandscape(md) {
+                font-size: 20px;
+            }
+
+            @include breakpointLandscape(xl) {
+                font-size: 24px;
+            }
+
+            @include breakpointPortrait(lg) {
+                font-size: 28px;
+            }
+
+        }
+
+    }
+
+    &__region {
+        align-self: flex-start;
+        flex-basis: 35%;
+        border-radius: 5px;
+        width: 60%;
+        box-shadow: 0 0 1px gray;
+
+        @include breakpointLandscape(xs) {
+            align-self: center;
+            height: 80%;
+        }
+
+        @include breakpointLandscape(xl) {
+            height: 80px;
+        }
+
+        &__select {
+            border: none;
+            width: 100%;
+            height: 100%;
+            padding: 10px 20px;
+            background-color: var(--background-elements);
+            color: var(--text-color);
+            font-size: 16px;
+            cursor: pointer;
+
+            @include breakpointLandscape(xs) {
+                font-size: 19px;
+            }
+
+
+            @include breakpointLandscape(md) {
+                font-size: 20px;
+            }
+
+            @include breakpointLandscape(xl) {
+                height: 100%;
+                font-size: 24px;
+                padding: 10px 20px;
+            }
+
+            @include breakpointPortrait(lg) {
+                font-size: 26px;
+                padding: 15px 30px;
+            }
+        }
+    }
+}
+
+.main {
+    &__field {
+        display: flex;
+        flex-direction: column;
+        width: 75%;
+        margin: 0 auto;
+
+        @include breakpointLandscape(xs) {
+            display: grid;
+            width: 90%;
+            grid-template-columns: 1fr 1fr;
+            column-gap: 5%;
+        }
+
+        @include breakpointLandscape(xl) {
+            display: grid;
+            width: 90%;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            column-gap: 5%;
+        }
+
+        @include breakpointPortrait(xs) {
+            max-width: 400px;
+        }
+
+        &__top {
+            position: fixed;
+            bottom: 5%;
+            right: 5%;
+            height: 8vh;
+            width: 8vh;
+            z-index: 1;
+            border-radius: 50%;
+            background-color: var(--background-elements);
+            cursor: pointer;
+            overflow: hidden;
+            max-height: 80px;
+            max-width: 80px;
+
+            @include breakpointLandscape(xs) {
+                display: grid;
+                height: 14vh;
+                width: 14vh;
+            }
+
+            @include breakpointLandscape(xl) {
+                right: 2%;
+                bottom: 3%;
+            }
+
+            & i {
+                font-size: 300%;
+                animation: scrollTop 1s infinite ease-in-out;
+                color: var(--text-color);
+
+                @include breakpointLandscape(xs) {
+                    animation: scrollTopLandscape 1.5s infinite ease-in-out;
+                }
+            }
+        }
+    }
+}
+
+@keyframes scrollTop {
+    0% {
+        transform: translate(0, 8vh);
+
+    }
+
+    100% {
+        transform: translate(0, -6vh);
+    }
+}
+
+@keyframes scrollTopLandscape {
+    0% {
+        transform: translate(0, 14vh);
+
+    }
+
+    100% {
+        transform: translate(0, -12vh);
+    }
+}
+
+.card {
+    position: relative;
+    flex-basis: 380px;
+    width: 100%;
+    box-shadow: var(--box-shadow);
+    margin: 0 0 20% 0;
+    background-color: var(--background-elements);
+    cursor: pointer;
+
+    @include breakpointPortrait(md) {
+        min-height: 400px;
+    }
+
+    @include breakpointLandscape(xs) {
+        min-height: 350px;
+        max-width: 330px;
+        margin: 0 auto 20%;
+    }
+
+    @include breakpointLandscape(md) {
+        min-height: 400px;
+    }
+
+    @include breakpointLandscape(xl) {
+        min-height: 400px;
+        margin: 0 0 8% 0;
+        max-width: none;
+    }
+
+    @include breakpointLandscape(xxl) {
+        min-height: 450px;
+        margin: 0 0 8% 0;
+        max-width: none;
+    }
+
+
+
+    &__picture {
+        height: 45%;
+
+        img {
+            width: 100%;
+            height: 100%;
+            box-shadow: 0 0 3px black;
+        }
+    }
+
+    &__description {
+        height: 60%;
+        padding: 10%;
+    }
+
+    &__country {
+        font-weight: 800;
+        margin: 0 0 10% 0;
+        font-size: 20px;
+        line-height: 100%;
+
+        @include breakpointPortrait(md) {
+            font-size: 21px;
+        }
+
+        @include breakpointLandscape(xs) {
+            font-size: 19px;
+        }
+
+        @include breakpointLandscape(md) {
+            font-size: 24px;
+        }
+
+        @include breakpointLandscape(xl) {
+            font-size: 18px;
+        }
+
+        @include breakpointLandscape(xxl) {
+            font-size: 22px;
+        }
+
+    }
+
+    &__information {
+        position: absolute;
+        bottom: 10%;
+    }
+
+    &__information__population,
+    &__information__region,
+    &__information__capital {
+        font-weight: 600;
+
+        @include breakpointPortrait(md) {
+            font-size: 18px;
+        }
+
+        @include breakpointLandscape(xs) {
+            font-size: 17px;
+        }
+
+        @include breakpointLandscape(md) {
+            font-size: 20px;
+        }
+
+        &__actual {
+            font-weight: 300;
+        }
+    }
+}
+
+.details {
+    margin: 50px auto 0;
+    width: 90%;
+
+    @include breakpointPortrait(xs) {
+        max-width: 450px;
+    }
+
+    @include breakpointLandscape(xs) {
+        width: 70%;
+        margin: 35px auto 0;
+    }
+
+    @include breakpointLandscape(md) {
+        width: 55%;
+    }
+
+    @include breakpointLandscape(lg) {
+        width: 45%;
+        margin: 45px auto 0;
+    }
+
+    @include breakpointLandscape(xl) {
+        display: flex;
+        flex-direction: row;
+        width: 80%;
+        justify-content: space-between;
+        align-items: center;
+        height: 85vh;
+        margin: 0px auto;
+    }
+
+    &__infoWrapper {
+        @include breakpointLandscape(xl) {
+            display: flex;
+            align-items: center;
+        }
+
+    }
+
+    &__button {
+        width: 100px;
+        border: none;
+        background-color: var(--background-elements);
+        color: var(--text-color);
+        height: 30px;
+        padding: 0 10px;
+        box-shadow: var(--box-shadow);
+        margin-bottom: 50px;
+
+        @include breakpointLandscape(xs) {
+            position: absolute;
+            top: 75px;
+            left: 5%;
+        }
+
+        @include breakpointLandscape(md) {
+            width: 140px;
+            height: 45px;
+            padding: 5px 20px;
+            top: 20%;
+        }
+
+        @include breakpointLandscape(xl) {
+            top: 90%;
+            position: sticky;
+            min-width: 140px;
+        }
+
+
+        &__arrow {
+            font-size: 18px;
+            cursor: pointer;
+
+            @include breakpointLandscape(md) {
+                font-size: 24px;
+            }
+
+        }
+
+        &__information {
+            margin-left: 5px;
+        }
+    }
+
+    &__picture {
+        width: 100%;
+        height: 35vh;
+        margin-bottom: 30px;
+        box-shadow: var(--box-shadow);
+
+        @include breakpointLandscape(xs) {
+            height: 70vh;
+            margin: 100px auto 25px;
+            max-height: 350px;
+        }
+
+        @include breakpointLandscape(xl) {
+            margin: 0;
+            flex-basis: 45%;
+            max-width: 500px;
+            min-width: 375px;
+        }
+
+        &__img {
+            width: 100%;
+            height: 100%;
+
+        }
+    }
+
+    &__information {
+        margin-top: 50px;
+
+        @include breakpointLandscape(xl) {
+            margin: 15vh 0 0 80px;
+            flex-basis: 50%;
+            min-width: 440px;
+            height: 10%;
+        }
+    }
+
+    &__country {
+        font-weight: 800;
+        font-size: 24px;
+        margin-bottom: 30px;
+
+        @include breakpointPortrait(md) {
+            font-size: 34px;
+        }
+
+        @include breakpointLandscape(xs) {
+            font-size: 34px;
+        }
+
+        @include breakpointLandscape(xl) {
+            font-size: 28px;
+        }
+
+        @include breakpointLandscape(xxxl) {
+            font-size: 32px;
+        }
+
+    }
+
+    &__aboutWrapper {
+
+        @include breakpointLandscape(xl) {
+            display: flex;
+        }
+
+    }
+
+    &__about {
+        font-weight: 600;
+
+        @include breakpointPortrait(md) {
+            font-size: 20px;
+        }
+
+        @include breakpointLandscape(xs) {
+            font-size: 22px;
+        }
+
+        @include breakpointLandscape(xl) {
+            font-size: 16px;
+        }
+
+        @include breakpointLandscape(xxxl) {
+            font-size: 22px;
+        }
+
+        div {
+            margin-bottom: 10px;
+
+            span {
+                font-weight: 300;
+            }
+        }
+    }
+
+    &__about:nth-child(1) {
+        margin-bottom: 50px;
+    }
+
+    &__about:nth-child(2) {
+        margin-bottom: 25px;
+
+        @include breakpointLandscape(xl) {
+            border-left: 2px solid black;
+            padding-left: 20px;
+            margin-left: 30px;
+        }
+
+    }
+
+    &__borderCountries {
+        padding-bottom: 50px;
+
+        &__tittle {
+            font-weight: 600;
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+
+        @include breakpointPortrait(md) {
+            font-size: 22px;
+        }
+
+        @include breakpointLandscape(xs) {
+            font-size: 22px;
+        }
+
+        @include breakpointLandscape(lg) {
+            font-size: 28px;
+        }
+
+        @include breakpointLandscape(xl) {
+            font-size: 32px;
+        }
+
+        &__nations {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            column-gap: 5%;
+
+            @include breakpointLandscape(xl) {
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+                margin-bottom: 5%;
+            }
+
+            &__nation {
+                background-color: var(--background-elements);
+                box-shadow: var(--box-shadow);
+                border: none;
+                color: var(--text-color);
+                height: 45px;
+                margin: 0 0 20px 0;
+                padding: 5px 10px;
+                font-size: 12px;
+
+                @include breakpointLandscape(xs) {
+                    height: 55px;
+                    font-size: 16px;
+                }
+
+                @include breakpointLandscape(xl) {
+                    height: 65px;
+                    font-size: 14px;
+                }
+
+                @include breakpointLandscape(xxxl) {
+                    font-size: 16px;
+                    height: 75px;
+                }
+
+                @include breakpointPortrait(md) {
+                    font-size: 16px;
+                    height: 55px;
+                }
+            }
+        }
+    }
+}
+
+.hidden {
+    display: none;
+}
+
+::-webkit-scrollbar {
+    width: 222em;
+}
+
+::-webkit-scrollbar-track {
+    background-color: rgba(0, 0, 255, 1);
+}

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rest Api - Countries</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <div class="header__title">Where in the world?</div>
+        <div class="header__toggle">
+          <i class="far fa-moon header__toggle__moon"> </i>
+          <div class="header__toggle__information">Dark Mode</div>
+        </div>
+      </header>
+
+      <section class="main">
+        <section class="filter">
+          <div class="filter__country">
+            <i class="fas fa-search filter__country__icon"></i>
+            <input
+              type="text"
+              placeholder="Search for a country..."
+              class="filter__country__input"
+            />
+          </div>
+          <div class="filter__region">
+            <select name="Region" id="Region" class="filter__region__select">
+              <option value="all" disabled selected hidden>
+                Filter by Region
+              </option>
+              <option value="all">All Regions</option>
+              <option value="Africa">Africa</option>
+              <option value="Americas">America</option>
+              <option value="Asia">Asia</option>
+              <option value="Europe">Europe</option>
+              <option value="Oceania">Oceania</option>
+            </select>
+          </div>
+        </section>
+        <div class="main__field">
+          <button class="main__field__top">
+            <i class="fas fa-angle-double-up"></i>
+          </button>
+        </div>
+        <section class="details hidden">
+          <button class="details__button">
+            <div class="details__button__arrow">
+              <i class="fas fa-long-arrow-alt-left"></i>
+              <span class="details__button__information">Back</span>
+            </div>
+          </button>
+
+          <section class="details__infoWrapper">
+            <div class="details__picture">
+              <img
+                src="./design/mobile-design-detail-light.jpg"
+                alt="flag"
+                class="details__picture__img"
+              />
+            </div>
+
+            <section class="details__information">
+              <div class="details__country">Belgium</div>
+
+              <section class="details__aboutWrapper">
+                <div class="details__about">
+                  <div class="details__about__nativeName">
+                    Native name: <span class="native">Belgia</span>
+                  </div>
+                  <div class="details__about__population">
+                    Population: <span class="population">11111111</span>
+                  </div>
+                  <div class="details__about__region">
+                    Region: <span class="region">Europe</span>
+                  </div>
+                  <div class="details__about__subRegion">
+                    Sub Region: <span class="subRegion">Western Europe</span>
+                  </div>
+                  <div class="details__about__capital">
+                    Capital: <span class="capital">Warsaw</span>
+                  </div>
+                </div>
+
+                <div class="details__about">
+                  <div class="details__about__topLevelDomain">
+                    Top Level Domain: <span class="topLevelDomain">.be</span>
+                  </div>
+                  <div class="details__about__currencies">
+                    Currencies: <span class="currencies"></span>
+                  </div>
+                  <div class="details__about__languages">
+                    Languages: <span class="languages"> Spain, French</span>
+                  </div>
+                </div>
+              </section>
+              <div class="details__borderCountries">
+                <div class="details__borderCountries__tittle">
+                  Border Countries:
+                </div>
+                <div class="details__borderCountries__nations"></div>
+              </div>
+            </section>
+          </section>
+        </section>
+      </section>
+    </div>
+
+    <a href=""></a>
+
+    <script src="./app/app.js" type="module"></script>
+  </body>
+</html>
+
+<a href=""></a>

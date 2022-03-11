@@ -1,0 +1,59 @@
+// 300,600,800 do fontu
+
+// Jasny
+$light-background: hsl(0, 0%, 98%);
+$light-mode-text: hsl(200, 15%, 8%);
+$light-mode-elements: hsl(0, 0%, 100%);
+$ligh-mode-input: hsl(0, 0%, 52%);
+
+
+// Ciemny
+$dark-mode-text: hsl(0, 0%, 100%);
+$dark-mode-elements: hsl(209, 23%, 22%);
+$dark-background: hsl(207, 26%, 17%);
+
+$breakpoints: (xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+    xxl: 1400px,
+    xxxl: 1750px);
+
+@mixin breakpointLandscape($name) {
+    @if not map-has-key($breakpoints, $name) {
+        @warn "Warning: `#{$name}` is not a valid breakpoint name.";
+    }
+
+    @else {
+        @media (orientation: landscape) and (min-width: map-get($breakpoints, $name)) {
+            @content;
+        }
+    }
+}
+
+@mixin breakpointPortrait($name) {
+    @if not map-has-key($breakpoints, $name) {
+        @warn "Warning: `#{$name}` is not a valid breakpoint name.";
+    }
+
+    @else {
+        @media (orientation: portrait) and (min-height: map-get($breakpoints, $name)) {
+            @content;
+        }
+    }
+
+}
+
+
+// @mixin breakpointIpad($name) {
+//     @if not map-has-key($breakpoints, $name) {
+//         @warn "Warning: `#{$name}` is not a valid breakpoint name.";
+//     }
+
+//     @else {
+//         @media (orientation: portrait) {
+//             @content;
+//         }
+//     }
+// }
